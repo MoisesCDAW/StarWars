@@ -10,8 +10,8 @@ package Proyecto;
  */
 public class Aprendiz extends Jedi implements Comparable{
     // Atributos
-    String maestro;
-    boolean despertarFuerza;
+    private String maestro;
+    private boolean despertarFuerza;
     
     // Constructor
     public Aprendiz(String nombre, int fuerza, int midiclorianos, String ladoFuerza, String Maestro){
@@ -33,21 +33,21 @@ public class Aprendiz extends Jedi implements Comparable{
     }
     
     public void elegirMaestro(Object o){
-        this.maestro = ((Jedi)o).getNombre();
+        this.setMaestro(((Jedi)o).getNombre());
     }
     
     public void despiertaFuerza(){
-        if (despertarFuerza) {
+        if (isDespertarFuerza()) {
             System.out.println("Este personaje ya ha despertado la fuerza.");
         }else{
             System.out.println("Fuerza despertada!");
-            this.despertarFuerza=true;
+            this.setDespertarFuerza(true);
         }
     }
     
     @Override
     public String toString(){
-        return super.toString()+String.format("Maestro: %s\nFuerza Despierta? %s\n", this.maestro, this.despertarFuerza);
+        return super.toString()+String.format("Maestro: %s\nFuerza Despierta? %s\n", this.getMaestro(), this.isDespertarFuerza());
     }
     
     @Override
@@ -58,6 +58,22 @@ public class Aprendiz extends Jedi implements Comparable{
     @Override
     public int compareTo(Object o) { // PENDIENTE
         return 1;
+    }
+
+    public String getMaestro() {
+        return maestro;
+    }
+
+    public void setMaestro(String maestro) {
+        this.maestro = maestro;
+    }
+
+    public boolean isDespertarFuerza() {
+        return despertarFuerza;
+    }
+
+    public void setDespertarFuerza(boolean despertarFuerza) {
+        this.despertarFuerza = despertarFuerza;
     }
     
 }
