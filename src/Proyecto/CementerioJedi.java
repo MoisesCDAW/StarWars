@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  *
  * @author moise
  */
-public class CementerioJedi {
+public class CementerioJedi implements Comparable{
     // Atributos
     private LocalDateTime[] Fecha={};
     private Jedi[] JediRip={};
@@ -64,4 +64,11 @@ public class CementerioJedi {
     public boolean equals(){ // PENDIENTE
         return true;
     }
+
+    @Override
+    public int compareTo(Object o) { // PENDIENTE
+        return 1;
+    }
+    
+    
 }
