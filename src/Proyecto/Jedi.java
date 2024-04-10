@@ -17,7 +17,7 @@ public class Jedi implements Comparable{
     private ESTADO estado;
     final private int midiclorianos; // un máximo de 20,000 mil puntos
     private boolean enamorado;
-    private Jedi[] bloqueados;
+    private Jedi[] bloqueados; // Un jedi tiene n Jedis Bloqueados?
     private String pareja;
     private LADOFUERZA ladoFuerza; // Lado oscuro o el de la luz
               
@@ -52,8 +52,15 @@ public class Jedi implements Comparable{
         this.enamorado = true;
     }
     
-    public void bloquear(Jedi jedi){ // PENDIENTE
+    public void bloquear(Jedi jedi){ // Suponiendo que un jedi tiene n Jedis bloqueados
         
+        this.bloqueados = Arrays.copyOf(bloqueados, bloqueados.length+1);
+        this.bloqueados[bloqueados.length-1] = jedi;
+        
+        if (jedi.enamorado) {
+            jedi.setEnamorado(false);
+            jedi.setPareja("Sin pareja");
+        }     
     }
     
     @Override 
@@ -70,7 +77,7 @@ public class Jedi implements Comparable{
 
     @Override
     public int compareTo(Object o) { // PENDIENTE
-        return 1;
+        return this.nombre.compareTo(((Jedi)o).nombre);
     }    
 
     public String getNombre() {
