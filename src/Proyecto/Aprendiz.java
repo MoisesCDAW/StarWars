@@ -11,7 +11,7 @@ public class Aprendiz extends Jedi implements Comparable{
     private boolean despertarFuerza;
     
     // Constructor
-    public Aprendiz(String nombre, int fuerza, int midiclorianos){
+    public Aprendiz(String nombre, double fuerza, int midiclorianos){
         super(nombre, fuerza, midiclorianos);
         this.maestro = "Sin maestro";
     }
@@ -19,13 +19,13 @@ public class Aprendiz extends Jedi implements Comparable{
     // Métodos
     public void entrenar(){
         double aux;
-        aux = this.getMidiclorianos()/200000;
+        aux = (double)this.getMidiclorianos()/200000;
         if (this.getFuerza()+aux>=10) {
             System.out.println("Este personaje ha alcanzado su fuerza máxima.");
             this.setFuerza(10);
         }else{
             System.out.println("Entreno hecho!");
-            this.setFuerza((int) (this.getFuerza() + aux));
+            this.setFuerza(this.getFuerza() + aux);          
         }
     }
     
@@ -44,7 +44,7 @@ public class Aprendiz extends Jedi implements Comparable{
     
     @Override
     public String toString(){
-        return super.toString()+String.format("Maestro: %s\nFuerza Despierta? %s\n", this.getMaestro(), this.isDespertarFuerza());
+        return super.toString()+String.format("\nMaestro: %s\nFuerza Despierta? %s\n", this.getMaestro(), this.isDespertarFuerza());
     }
     
     @Override

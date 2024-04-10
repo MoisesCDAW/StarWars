@@ -12,7 +12,7 @@ public class comparaFuerza implements Comparator{
 
     @Override
     public int compare(Object o1, Object o2) {
-        return ((Jedi)o1).getFuerza()-((Jedi)o2).getFuerza();
+        return (int)((Jedi)o1).getFuerza()-(int)((Jedi)o2).getFuerza();
     }
     
 }

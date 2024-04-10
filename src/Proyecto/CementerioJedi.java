@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class CementerioJedi implements Comparable{
     // Atributos
     private LocalDateTime[] Fecha={};
-    private Jedi[] JediRip={};
+    private String[] JediRip={};
     private String[] Verdugo={}; // Un verdugo aparecerá varias veces en la lista?
     
     /* Constructor
@@ -26,8 +26,8 @@ public class CementerioJedi implements Comparable{
     }
     
     public String combate(Jedi jedi1, Jedi jedi2){
-        int puntuaJedi1 = dados() + jedi1.getFuerza();
-        int puntuaJedi2 = dados() + jedi2.getFuerza();
+        double puntuaJedi1 = dados() + jedi1.getFuerza();
+        double puntuaJedi2 = dados() + jedi2.getFuerza();
         
         if (puntuaJedi1==puntuaJedi2) {
             return "Hubo un empate en este combate!";
@@ -40,12 +40,12 @@ public class CementerioJedi implements Comparable{
         }
         
         if (puntuaJedi1>puntuaJedi2) {
-            JediRip[JediRip.length-1] = jedi2;
+            JediRip[JediRip.length-1] = jedi2.getNombre();
             Verdugo[Verdugo.length-1] = jedi1.getNombre();
             return "El ganador es: "+jedi1.getNombre();  
             
         }else{
-            JediRip[JediRip.length-1] = jedi1;
+            JediRip[JediRip.length-1] = jedi1.getNombre();
             Verdugo[Verdugo.length-1] = jedi2.getNombre();
             return "El ganador es: "+jedi2.getNombre();
         }      

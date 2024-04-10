@@ -25,12 +25,12 @@ public class Main {
 
         j1.presentarse();
         j1.enamorarse(j2);
-        Jedi.bloquear(j1); // PENDIENTE
+        Jedi.bloquear(j1);
         System.out.println(j1);
 
         System.out.println("\n------- Apatardo Aprendiz -------\n");
         Aprendiz a1 = new Aprendiz("Ahsoka Tano", 9, 19000);
-        Aprendiz a2 = new Aprendiz("Darth Maul", 17, 17000);
+        Aprendiz a2 = new Aprendiz("Darth Maul", 8, 17000);
 
         a1.entrenar();
         a1.elegirMaestro(j1);
@@ -42,6 +42,13 @@ public class Main {
         CementerioJedi c1 = new CementerioJedi();
         c1.combate(j1, j2);
         System.out.println(c1);
+
+
+        // PENDIENTE
+        // 1. Probar el funcionamiento de compareTo y comparaFuerza
+        // 2. Implementar los demás métodos pendientes
+
+
     }
     
 }
