@@ -64,7 +64,7 @@ public class Jedi implements Comparable{
     }
     
     @Override 
-    public String toString(){ // PENDIENTE
+    public String toString(){
         return String.format("DETALLES DEL JEDI\nNombre: %s\nFuerza: %d\nEstado: %s\nMidiclorianos: %d\nEstá enamorado? %s\n"
                 + "Pareja: %s\nLado de la fuerza: %s\nLISTA DE JEDI BLOQUEADOS\n%s", this.nombre, this.fuerza, this.estado,
                 this.midiclorianos, this.enamorado, this.pareja, this.ladoFuerza, Arrays.toString(this.bloqueados));
@@ -76,7 +76,7 @@ public class Jedi implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) { // PENDIENTE
+    public int compareTo(Object o) {
         return this.nombre.compareTo(((Jedi)o).nombre);
     }    
 
