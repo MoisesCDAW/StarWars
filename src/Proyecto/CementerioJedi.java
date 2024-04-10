@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
  */
 public class CementerioJedi {
     // Atributos
-    static private LocalDateTime[] Fecha={};
-    static private Jedi[] JediRip={};
-    static private String[] Verdugo={};
+    private LocalDateTime[] Fecha={};
+    private Jedi[] JediRip={};
+    private String[] Verdugo={}; // Un verdugo aparecerá varias veces en la lista?
     
     /* Constructor
     public CementerioJedi(){
@@ -52,16 +52,13 @@ public class CementerioJedi {
     }
     
     public String mostrarCaidos(){ // PENDIENTE
-        
-//        for (int i = 0; i < JediRip.length; i++) {
-//            
-//        }
+        // NO sería el mismo funcionamiento que el toString?
         return "";
     }
     
-    
-    public String toStrinng(){ // PENDIENTE
-        return "";
+    @Override
+    public String toString(){
+        return "DETALLES DEL CEMENTERIO\n"+Arrays.toString(Fecha)+"\n"+Arrays.toString(JediRip)+"\n"+Arrays.toString(Verdugo);
     }
     
     public boolean equals(){ // PENDIENTE
