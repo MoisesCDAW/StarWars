@@ -4,6 +4,8 @@
  */
 package Proyecto;
 
+import java.util.*;
+
 /**
  *
  * @author moise
@@ -17,11 +19,11 @@ public class Jedi implements Comparable{
     private boolean enamorado;
     private Jedi[] bloqueados;
     private String pareja;
-    private String ladoFuerza; // Lado oscuro o el de la luz
-    
+    private LADOFUERZA ladoFuerza; // Lado oscuro o el de la luz
+              
     
     // Constructor
-    Jedi(String nombre, int fuerza, int midiclorianos, String ladoFuerza){
+    public Jedi(String nombre, int fuerza, int midiclorianos){
         setNombre(nombre);
         setFuerza(fuerza);
         
@@ -33,27 +35,32 @@ public class Jedi implements Comparable{
         }else{this.midiclorianos = midiclorianos;}
         
         this.pareja = "Sin pareja";
-        setLadoFuerza(ladoFuerza);
+        
+        this.ladoFuerza = LADOFUERZA.LUZ;
         
     }
     
     
     // Métodos
-    public String presentarse(){ // PENDIENTE
-        return "";
+    public String presentarse(){
+        return String.format("PRESENTACIÓN DEL JEDI\nNombre: %s\nMidiclorianos: %d\nLado de la fuerza: %s\n",
+                this.nombre, this.midiclorianos, this.ladoFuerza);
     }
     
-    public void enamorarse(String pareja){ // PENDIENTE
-        
+    public void enamorarse(Jedi pareja){
+        this.pareja = pareja.nombre;
+        this.enamorado = true;
     }
     
     public void bloquear(Jedi jedi){ // PENDIENTE
-    
+        
     }
     
     @Override 
     public String toString(){ // PENDIENTE
-        return "";
+        return String.format("DETALLES DEL JEDI\nNombre: %s\nFuerza: %d\nEstado: %s\nMidiclorianos: %d\nEstá enamorado? %s\n"
+                + "Pareja: %s\nLado de la fuerza: %s\nLISTA DE JEDI BLOQUEADOS\n%s", this.nombre, this.fuerza, this.estado,
+                this.midiclorianos, this.enamorado, this.pareja, this.ladoFuerza, Arrays.toString(this.bloqueados));
     }
 
     @Override
@@ -118,11 +125,11 @@ public class Jedi implements Comparable{
         this.pareja = pareja;
     }
 
-    public String getLadoFuerza() {
+    public LADOFUERZA getLadoFuerza() {
         return ladoFuerza;
     }
 
-    public void setLadoFuerza(String ladoFuerza) {
+    public void setLadoFuerza(LADOFUERZA ladoFuerza) {
         this.ladoFuerza = ladoFuerza;
     }
 }
