@@ -5,6 +5,8 @@
 package Principal;
 
 import Proyecto.*;
+import Comparator.*;
+import java.util.*;
 
 /**
  *
@@ -21,6 +23,8 @@ public class Main {
         
         Jedi j1 = new Jedi("Max", 5, 23);
         System.out.println(j1);
+        
+//        Arrays.sort(j1.getBloqueados(), new comparaFuerza()); // Para ordenar los Jedi por su nivel de fuerza
     }
     
 }
