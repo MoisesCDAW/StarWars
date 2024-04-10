@@ -18,13 +18,30 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CementerioJedi c1 = new CementerioJedi();
-        System.out.println(c1);
-        
-        Jedi j1 = new Jedi("Max", 5, 23);
+
+        System.out.println("\n------- Apatardo Jedi -------\n");
+        Jedi j1 = new Jedi("Anakin Skywalker", 9, 19000);
+        Jedi j2 = new Jedi("Darth Sidious", 8, 18000);
+
+        j1.presentarse();
+        j1.enamorarse(j2);
+        Jedi.bloquear(j1); // PENDIENTE
         System.out.println(j1);
-        
-//        Arrays.sort(j1.getBloqueados(), new comparaFuerza()); // Para ordenar los Jedi por su nivel de fuerza
+
+        System.out.println("\n------- Apatardo Aprendiz -------\n");
+        Aprendiz a1 = new Aprendiz("Ahsoka Tano", 9, 19000);
+        Aprendiz a2 = new Aprendiz("Darth Maul", 17, 17000);
+
+        a1.entrenar();
+        a1.elegirMaestro(j1);
+        a1.despiertaFuerza();
+        System.out.println(a1);
+
+        System.out.println("\n------- Apatardo Cementerio -------\n");
+
+        CementerioJedi c1 = new CementerioJedi();
+        c1.combate(j1, j2);
+        System.out.println(c1);
     }
     
 }

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Proyecto;
 
 /**
@@ -14,7 +11,7 @@ public class Aprendiz extends Jedi implements Comparable{
     private boolean despertarFuerza;
     
     // Constructor
-    public Aprendiz(String nombre, int fuerza, int midiclorianos, String ladoFuerza, String Maestro){
+    public Aprendiz(String nombre, int fuerza, int midiclorianos){
         super(nombre, fuerza, midiclorianos);
         this.maestro = "Sin maestro";
     }
