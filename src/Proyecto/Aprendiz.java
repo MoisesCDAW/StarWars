@@ -56,8 +56,8 @@ public class Aprendiz extends Jedi implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) { // PENDIENTE
-        return 1;
+    public int compareTo(Object o) {
+        return this.getNombre().compareTo(((Aprendiz)o).getNombre());
     }
 
     public String getMaestro() {
