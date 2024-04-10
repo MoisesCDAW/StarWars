@@ -4,6 +4,8 @@
  */
 package Principal;
 
+import Proyecto.*;
+
 /**
  *
  * @author moise
@@ -14,7 +16,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CementerioJedi c1 = new CementerioJedi();
+        System.out.println(c1);
+        
+        Jedi j1 = new Jedi("Max", 5, 23);
+        System.out.println(j1);
     }
     
 }
