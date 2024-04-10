@@ -15,7 +15,7 @@ public class Aprendiz extends Jedi implements Comparable{
     
     // Constructor
     public Aprendiz(String nombre, int fuerza, int midiclorianos, String ladoFuerza, String Maestro){
-        super(nombre, fuerza, midiclorianos, ladoFuerza);
+        super(nombre, fuerza, midiclorianos);
         this.maestro = "Sin maestro";
     }
     
