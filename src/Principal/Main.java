@@ -47,6 +47,7 @@ public class Main {
         // PENDIENTE
         // 1. Probar el funcionamiento de compareTo y comparaFuerza
         // 2. Implementar los demás métodos pendientes
+        // 3. Hacer el merge a "Master"
 
 
     }
