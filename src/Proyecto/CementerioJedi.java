@@ -9,16 +9,12 @@ import java.time.LocalDateTime;
  *
  * @author moise
  */
-public class CementerioJedi implements Comparable{
+public class CementerioJedi{
     // Atributos
     private LocalDateTime[] Fecha={};
     private String[] JediRip={};
-    private String[] Verdugo={}; // Un verdugo aparecerá varias veces en la lista?
+    private String[] Verdugo={};
     
-    /* Constructor
-    public CementerioJedi(){
-        
-    }*/
     
     // Método
     private int dados(){
@@ -51,23 +47,9 @@ public class CementerioJedi implements Comparable{
         }      
     }
     
-    public String mostrarCaidos(){ // PENDIENTE
-        // NO sería el mismo funcionamiento que el toString?
-        return "";
-    }
-    
     @Override
     public String toString(){
-        return "DETALLES DEL CEMENTERIO\n"+Arrays.toString(Fecha)+"\n"+Arrays.toString(JediRip)+"\n"+Arrays.toString(Verdugo);
-    }
-    
-    public boolean equals(){ // PENDIENTE
-        return true;
-    }
-
-    @Override
-    public int compareTo(Object o) { // PENDIENTE
-        return 1;
+        return "DETALLES DEL CEMENTERIO\n"+"Fechas: "+Arrays.toString(Fecha)+"\nJedis muertos: "+Arrays.toString(JediRip)+"\nVerdugos: "+Arrays.toString(Verdugo);
     }
     
     

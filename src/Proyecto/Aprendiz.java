@@ -48,12 +48,15 @@ public class Aprendiz extends Jedi implements Comparable{
     }
     
     @Override
-    public boolean equals(Object o){ // PENDIENTE
-        return true;
+    public boolean equals(Object o){
+        Aprendiz otroAprendiz = (Aprendiz)o;
+        return super.equals(otroAprendiz) &&
+            this.maestro.equals(otroAprendiz.maestro) &&
+            this.despertarFuerza==otroAprendiz.despertarFuerza;
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Object o) { // Este orden se aplica a lista de objetos tipo Aprendiz
         return this.getNombre().compareTo(((Aprendiz)o).getNombre());
     }
 

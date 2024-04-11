@@ -17,7 +17,7 @@ public class Jedi implements Comparable{
     private ESTADO estado;
     final private int midiclorianos; // un máximo de 20,000 mil puntos
     private boolean enamorado;
-    static String[] bloqueados = new String[0]; // Un jedi tiene n Jedis Bloqueados o es un atributo "static"? 
+    static String[] bloqueados = new String[0];
     private String pareja;
     private LADOFUERZA ladoFuerza; // Lado oscuro o el de la luz
               
@@ -30,7 +30,7 @@ public class Jedi implements Comparable{
         this.estado = ESTADO.VIVO;
         
         if (midiclorianos<1) {
-            System.out.println("Se ingresó una cantidad errónea de midiclorianos.");
+            System.out.println("\nERROR en "+this.nombre+". Se ingresó una cantidad errónea de midiclorianos.\n");
             this.midiclorianos = 1;
         }else{this.midiclorianos = midiclorianos;}
 
@@ -71,12 +71,19 @@ public class Jedi implements Comparable{
     }
 
     @Override
-    public boolean equals(Object o){ // PENDIENTE
-        return true;
+    public boolean equals(Object o){
+        Jedi otroJedi = (Jedi)o;
+        return this.nombre.equals(otroJedi.nombre) &&
+            this.fuerza==otroJedi.fuerza &&
+            this.estado.equals(otroJedi.estado) &&
+            this.midiclorianos==otroJedi.midiclorianos &&
+            this.enamorado==otroJedi.enamorado &&
+            this.pareja.equals(otroJedi.pareja) &&
+            this.ladoFuerza.equals(otroJedi.ladoFuerza);
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Object o) { // Este orden se aplica a lista de objetos tipo Jedi
         return this.nombre.compareTo(((Jedi)o).nombre);
     }    
 
@@ -93,6 +100,10 @@ public class Jedi implements Comparable{
     }
 
     public void setFuerza(double fuerza) {
+        if (fuerza>10) {
+            System.out.println("\nERROR en "+this.nombre+". La fuerza no puede ser mayor a 10.");
+            fuerza = 1;
+        }
         this.fuerza = fuerza;
     }
 
