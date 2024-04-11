@@ -2,21 +2,40 @@
 package Proyecto;
 
 /**
- *
- * @author moise
+ * <h2> Clase aprendiz, la cual extiende de la clase Jedi. Representa a los
+ * aprendices de cada Jedi</h2>
+ * @version 4.2024
+ * @author Moisés Campos
+ * @since 11-04-2024
  */
 public class Aprendiz extends Jedi implements Comparable{
-    // Atributos
+    /**
+     * Maestro del aprendiz, parámetro tipo String
+     */
     private String maestro;
+    /**
+     * Marca True o False si el aprendiz ha despertado la fuerza
+     */
     private boolean despertarFuerza;
-    
-    // Constructor
+
+    /**
+     * Constructor de la clase Aprendiz con tres parámetros de la clase padre "Jedi".
+     * No recibe parámetros propios de la clase Aprendiz
+     * @param nombre tipo String
+     * @param fuerza tipo double
+     * @param midiclorianos tipo int
+     */
     public Aprendiz(String nombre, double fuerza, int midiclorianos){
         super(nombre, fuerza, midiclorianos);
         this.maestro = "Sin maestro";
     }
     
     // Métodos
+    
+    /**
+     * Entrena al aprendiz para aumentar su fuerza mediante una división de los 
+     * midiclorianos entre 200.000 mil
+     */
     public void entrenar(){
         double aux;
         aux = (double)this.getMidiclorianos()/200000;
@@ -29,10 +48,20 @@ public class Aprendiz extends Jedi implements Comparable{
         }
     }
     
+    /**
+     * Para declarar el nombre del maestro Jedi del aprendiz
+     * Se le pasa un parámetro tipo Object para luego hacer un "cast" a Jedi y 
+     * seleccionar el nombre
+     * @param o tipo Object
+     */
     public void elegirMaestro(Object o){
         this.setMaestro(((Jedi)o).getNombre());
     }
     
+    /**
+     * Pasar a true el atributo despertarFuerza de aprendiz
+     * Marca también un mensaje si el atributo ya está en true
+     */
     public void despiertaFuerza(){
         if (isDespertarFuerza()) {
             System.out.println("Este personaje ya ha despertado la fuerza.");
@@ -42,6 +71,10 @@ public class Aprendiz extends Jedi implements Comparable{
         }
     }
     
+    /**
+     * Sobrescritura del método toString() para mostrar los atributos del aprendiz
+     * @return 
+     */
     @Override
     public String toString(){
         return super.toString()+String.format("\nMaestro: %s\nFuerza Despierta? %s\n", this.getMaestro(), this.isDespertarFuerza());
