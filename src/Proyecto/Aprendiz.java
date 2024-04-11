@@ -2,7 +2,7 @@
 package Proyecto;
 
 /**
- * <h2> Clase aprendiz, la cual extiende de la clase Jedi. Representa a los
+ * <h2> La cual extiende de la clase Jedi. Representa a los
  * aprendices de cada Jedi</h2>
  * @version 4.2024
  * @author Moisés Campos
@@ -72,14 +72,19 @@ public class Aprendiz extends Jedi implements Comparable{
     }
     
     /**
-     * Sobrescritura del método toString() para mostrar los atributos del aprendiz
-     * @return 
+     * Sobrescritura del método toString() para mostrar los atributos del Aprendiz
+     * @return Descripción del objeto de la clase
      */
     @Override
     public String toString(){
         return super.toString()+String.format("\nMaestro: %s\nFuerza Despierta? %s\n", this.getMaestro(), this.isDespertarFuerza());
     }
     
+    /**
+     * Sobrescritura de equals para poder comparar objetos de la clase Aprendiz
+     * @param o tipo Object para luego hacer un cast a Aprendiz
+     * @return Devuelve true o false
+     */
     @Override
     public boolean equals(Object o){
         Aprendiz otroAprendiz = (Aprendiz)o;
@@ -88,23 +93,45 @@ public class Aprendiz extends Jedi implements Comparable{
             this.despertarFuerza==otroAprendiz.despertarFuerza;
     }
 
+    /**
+     * Sobrescritura de compareTo para poder ordenar objetos de la clase Aprendiz
+     * Este orden se aplica a lista de objetos tipo Aprendiz
+     * @param o tipo Object para luego hacer un cast a Aprendiz
+     * @return -1, 0 o 1 para poder ordenar a los Aprendices
+     */
     @Override
-    public int compareTo(Object o) { // Este orden se aplica a lista de objetos tipo Aprendiz
+    public int compareTo(Object o) {
         return this.getNombre().compareTo(((Aprendiz)o).getNombre());
     }
-
+    
+    /**
+     * Para poder mostrar el nombre del maestro fuera de la clase local
+     * @return Nombre del maestro
+     */
     public String getMaestro() {
         return maestro;
     }
-
+    
+    /**
+     * Para poder cambiar el nombre del maestro fuera de la clase local
+     * @param maestro 
+     */
     public void setMaestro(String maestro) {
         this.maestro = maestro;
     }
 
+    /**
+     * Para mostrar el valor del atributo despertarFuerza fuera de la clase local
+     * @return Estado del atributo despertarFuerza
+     */
     public boolean isDespertarFuerza() {
         return despertarFuerza;
     }
 
+    /**
+     * Para poder cambiar el estado del atributo fuera de la clase local
+     * @param despertarFuerza 
+     */
     public void setDespertarFuerza(boolean despertarFuerza) {
         this.despertarFuerza = despertarFuerza;
     }
