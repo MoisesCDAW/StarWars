@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package Principal;
 
 import Proyecto.*;
 import java.util.*;
 
 /**
- *
- * @author moise
+ * <h2> Comprueba el funcinamiento de varios métodos de los objetos de las clases</h2>
+ * @version 4.2024
+ * @author Moisés Campos
+ * @since 11-04-2024
  */
 public class Main {
 
     /**
-     * @param args the command line arguments
+     * @param args los argumentos de la línea de comando
      */
     public static void main(String[] args) {
 
